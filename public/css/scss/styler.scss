@@ -1,0 +1,250 @@
+@import '_globals';
+@import '_mixins';
+@import '_fonts';
+@import '_baseClasses';
+@import '_genericClasses';
+@import '_icons';
+@import '_navigation';
+
+// hammer.js
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+  color: $black;
+  font-size: 16px;
+  //line-height: 28px; // http://www.pearsonified.com/typography/
+  font-family: 'open_sanslight';
+}
+
+.bodyContainer{
+	width: $containerWidth;
+	margin: 0 auto;
+}
+
+footer{
+	background-color: $ftrBgColor;
+	color: $ftrColor;
+	height: 400px;
+	margin-top: 5px;
+	font-family: 'open_sansbold';
+	.disclaimer{
+	  	font-family: 'open_sanslight';
+		text-align: center;
+		font-size: 12px;
+		padding-top: 5px;
+	}
+	.wrapper{
+		height:345px;
+		.col{
+			@include columnWidthAndSettings(3, 10);
+			float: left;
+			padding-top: 10px;
+			text-align: center;
+			.partners{
+				margin-left: 10px;
+				background-color: $white;
+				color: $black;
+				-webkit-box-shadow: inset 0px 4px 28px -7px rgba(0, 0, 0, 0.5);
+				-moz-box-shadow: inset 0px 4px 28px -7px rgba(0, 0, 0, 0.5);
+				box-shadow: inset 0px 4px 28px -7px rgba(0, 0, 0, 0.5);
+				.logo{
+					height: 150px;
+					margin-top: 12px;
+				}
+				.partnerlogo{
+					width: 130px;
+				}
+			}
+			.regels{
+	  			font-family: 'open_sanslight';
+	  			text-align: left;
+				padding-left: 15px;
+	  			li{
+	  				padding-bottom: 15px;
+	  				list-style-type: none;
+	  			}
+			}
+			p{
+				text-align: left;
+				span{
+	  				font-family: 'open_sanslight';
+	  				a{
+	  					color: $white;
+						text-shadow: 2px 2px $red;
+	  				}
+				}
+			}
+		}
+	}
+}
+
+h1{
+	margin-bottom: 0px;
+}
+
+.blog{
+	.blogtitle{
+		//font-family: 'open_sansbold';
+		margin: 20px 0 8px 0;
+		border-bottom: 1px solid $black;
+	}
+	.date{
+		color: $red;
+		float: right;
+		//font-family: 'open_sansbold';
+	}
+	.picture{
+		width: 960px;
+	}
+	.subtitle{
+		font-family: 'open_sansbold';
+	}
+}
+
+.calendar{
+	.timeline{
+		margin: 5px 0 20px 0;
+		border-bottom: 5px solid $black;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		.date{
+			width: 120px;
+			margin: 0 auto;
+			padding-top: 5px;
+			text-align: center;
+			@include contrast1;
+		}
+	}
+	.trainings{
+		padding-top: 30px;
+		overflow: hidden; //clearing floats
+		.training{
+			@include columnWidthAndSettings(3, 10);
+			//height: 320px;
+			float: left;
+			font-family: 'open_sansbold';
+			font-size: 30px;
+			.spacer{
+				@include width(3, 10, 7);
+				border: 2px solid $black;
+				border-bottom: 0px;
+				height: 30px;
+			}
+			.contrast{
+				@include contrast1;
+				@include width(3, 10, 7);
+				-webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+				-moz-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+				box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+				&:after{
+					content: "";
+					width: 0px;
+					height: 89px;
+					border-bottom: 7px solid transparent;
+					border-left: 7px solid $black;
+					position: relative;
+					float: right;
+					right: -7px;
+					top: -82px;
+				}
+				p{
+					margin: 0px;
+					letter-spacing: 13px;
+					padding: 0 5px 0 5px;
+					text-align: center;
+				}
+				a{
+					letter-spacing: 13px;
+					padding: 0 5px 0 5px;
+					text-align: center;
+				}
+			}
+			.content{
+				@include width(3, 10, 7);
+				border: 2px solid $black;
+				border-top: 0px;
+				padding: 10px 10px 0 10px;
+				.HASSELT{
+					letter-spacing: 23.6px;
+				}
+				.GENK{
+					letter-spacing: 63.4px;
+				}
+				.date{
+					letter-spacing: 7.4px;
+					border-bottom: 2px solid $black;
+					margin-bottom: 5px;
+					span{
+						font-size: 20px;
+					}
+				}
+			}
+			a{
+				color: $linkColor;
+				text-decoration: none;
+				&:hover{
+					color: $linkColorHover;
+				}
+			}
+		}
+	}
+}
+
+.about{
+	.qanda{
+ 		line-height: 28px; // http://www.pearsonified.com/typography/
+		overflow: auto; //clearing floats
+		margin-bottom: 20px;
+		.q{
+			margin-bottom: 25px;
+			p{
+				@include contrast1;
+			}
+			.triangle{
+				float: left;
+				border-top: 10px solid $black;
+			}
+		}
+		.a{
+			text-align: right;
+			margin-bottom: 25px;
+			p{
+				@include contrast2;
+			}
+			.triangle{
+				float: right;
+				border-top: 10px solid $red;
+			}
+		}
+		p{
+			@extend .conversationBalloon;
+			margin-bottom: 0px;
+		}
+		.triangle{
+			@extend .baseTriangle;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			margin: 0 20px 0 20px;
+		}
+	}
+	.staff{
+		overflow: auto; //clearing floats
+		.member{
+			@include columnWidthAndSettings(4, 10);
+			float: left;
+			img{ 
+			}
+			p{
+				@include contrast1;
+				margin-bottom: 2px;
+				margin-top: 2px;
+				a{}
+			}
+		}
+	}
+}

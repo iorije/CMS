@@ -1,0 +1,25 @@
+.divider{
+	background-color: $black;
+	height: 10px;
+	width: 100%;
+}
+.smalldivider{
+	background-color: $black;
+	height: 5px;
+	width: 100%;
+}
+
+.visible{
+	display:block;
+}
+
+.invisible{
+	display:none;
+}
+
+.frsh-bullet{
+	float: left;
+	width: 33px;
+	padding-top: 4px;
+	margin-right: 4px;
+}
