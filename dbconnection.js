@@ -4,7 +4,7 @@ var MongoClient = require('mongodb').MongoClient,
     Server = require('mongodb').Server,
     BSON = require('mongodb').BSONPure;
 
-var mongoClient = new MongoClient(new Server('localhost', 27017));
+var mongoClient = new MongoClient(new Server('127.0.0.1', 27017));
 var db = mongoClient.db("FRSH");
 
 exports.connect = function(){
